@@ -1,11 +1,15 @@
-import { User, UserStatus } from "../proto/users_pb";
-import getUser from "./get-user";
-import createUsers from "./create-users";
-import allUsers from "./all-users";
+const { User, UserStatus } = require("../proto/users_pb");
+const getUser = require("./get-user").getUser;
+const createUsers = require("./create-users").createNewUsers;
+const allUsers = require("./all-users").allUsers;
 
 async function run() {
-  const user = await getUser(1);
-  console.log(user.toString());
+  try {
+    const user = await getUser(1);
+    console.log(user.toString());
+  } catch (error) {
+    console.log(error.message)
+  }
 
   const jim = new User();
   jim.setName("Jim");
