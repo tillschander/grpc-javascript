@@ -1,7 +1,6 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 'use strict';
-var grpc = require('grpc');
 var users_pb = require('./users_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 
@@ -39,7 +38,7 @@ function deserialize_users_UserRequest(buffer_arg) {
 }
 
 
-var UsersService = exports.UsersService = {
+var UsersService = exports['users.Users'] = {
   getUser: {
     path: '/users.Users/GetUser',
     requestStream: false,
@@ -75,4 +74,3 @@ var UsersService = exports.UsersService = {
   },
 };
 
-exports.UsersClient = grpc.makeGenericClientConstructor(UsersService);
